@@ -1,0 +1,120 @@
+<nz-card>
+  <nz-table #table4 [nzData]="tdData" nzBordered [nzShowPagination]="false" [nzFrontPagination]="false">
+    <thead>
+      <tr>
+        <th>产品名称</th>
+        <th>计量单位</th>
+        <th>实际单位</th>
+        <th>折标产量</th>
+        <th>分摊方式</th>
+        <th [colSpan]="2">能源名称</th>
+        <th>计量单位</th>
+        <th>总量</th>
+        <th>直接消耗量</th>
+        <th>分摊量</th>
+        <th>折标系数</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of tdData; index as j">
+        <td *ngIf="data[0].rowSpan != 0" [attr.rowSpan]="data[0].rowSpan + 2">{{ data[0]['id'] }}</td>
+        <td *ngIf="data[0].rowSpan != 0" [attr.rowSpan]="data[0].rowSpan + 2">{{ data[0]['id'] }}</td>
+        <td *ngIf="data[0].rowSpan != 0" [attr.rowSpan]="data[0].rowSpan + 2">{{ data[0]['id'] }}</td>
+        <td *ngIf="data[0].rowSpan != 0" [attr.rowSpan]="data[0].rowSpan + 2">{{ data[0]['id'] }}</td>
+        <td *ngIf="data[0].rowSpan != 0" [attr.rowSpan]="data[0].rowSpan + 2">{{ data[0]['id'] }}</td>
+        <td *ngIf="data[1].rowSpan != 0" [attr.rowSpan]="data[1].rowSpan" [attr.colSpan]="2">{{ data[1]['id'] }}</td>
+        <td *ngIf="data[1].rowSpan != 0" [attr.rowSpan]="data[1].rowSpan">{{ data[1]['id'] }}</td>
+        <td *ngIf="data[1].rowSpan != 0" [attr.rowSpan]="data[1].rowSpan">{{ data[1]['id'] }}</td>
+        <td *ngIf="data[1].rowSpan != 0" [attr.rowSpan]="data[1].rowSpan">{{ data[1]['id'] }}</td>
+        <td *ngIf="data[1].rowSpan != 0" [attr.rowSpan]="data[1].rowSpan">{{ data[1]['id'] }}</td>
+        <td *ngIf="data[2].rowSpan != 0" [attr.rowSpan]="data[2].rowSpan">{{ data[2]['id'] }}</td>
+        <!--   <td><input nz-input /></td>
+      <td><input nz-input /></td> -->
+      </tr>
+      <tr>
+        <td [attr.rowSpan]="2">合计</td>
+        <td>当量值</td>
+        <td>吨标准煤</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>等价值</td>
+        <td>吨标准煤</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr *ngFor="let data of tdData; index as j">
+        <td *ngIf="data[0].rowSpan != 0" [attr.rowSpan]="data[0].rowSpan + 2">{{ data[0]['id'] }}</td>
+        <td *ngIf="data[0].rowSpan != 0" [attr.rowSpan]="data[0].rowSpan + 2">{{ data[0]['id'] }}</td>
+        <td *ngIf="data[0].rowSpan != 0" [attr.rowSpan]="data[0].rowSpan + 2">{{ data[0]['id'] }}</td>
+        <td *ngIf="data[0].rowSpan != 0" [attr.rowSpan]="data[0].rowSpan + 2">{{ data[0]['id'] }}</td>
+        <td *ngIf="data[0].rowSpan != 0" [attr.rowSpan]="data[0].rowSpan + 2">{{ data[0]['id'] }}</td>
+        <td *ngIf="data[1].rowSpan != 0" [attr.rowSpan]="data[1].rowSpan" [attr.colSpan]="2">{{ data[1]['id'] }}</td>
+        <td *ngIf="data[1].rowSpan != 0" [attr.rowSpan]="data[1].rowSpan">{{ data[1]['id'] }}</td>
+        <td *ngIf="data[1].rowSpan != 0" [attr.rowSpan]="data[1].rowSpan">{{ data[1]['id'] }}</td>
+        <td *ngIf="data[1].rowSpan != 0" [attr.rowSpan]="data[1].rowSpan">{{ data[1]['id'] }}</td>
+        <td *ngIf="data[1].rowSpan != 0" [attr.rowSpan]="data[1].rowSpan">{{ data[1]['id'] }}</td>
+        <td *ngIf="data[2].rowSpan != 0" [attr.rowSpan]="data[2].rowSpan">{{ data[2]['id'] }}</td>
+        <!--   <td><input nz-input /></td>
+      <td><input nz-input /></td> -->
+      </tr>
+      <tr>
+        <td [attr.rowSpan]="2">合计</td>
+        <td>当量值</td>
+        <td>吨标准煤</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>等价值</td>
+        <td>吨标准煤</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr *ngFor="let data of sumList; index as j">
+        <td [attr.colSpan]="5" *ngIf="data[0].rowSpan != 0" [attr.rowSpan]="data[0].rowSpan + 2">合计</td>
+        <td *ngIf="data[1].rowSpan != 0" [attr.rowSpan]="data[1].rowSpan" [attr.colSpan]="2">{{ data[1]['id'] }}</td>
+        <td *ngIf="data[1].rowSpan != 0" [attr.rowSpan]="data[1].rowSpan">{{ data[1]['id'] }}</td>
+        <td *ngIf="data[1].rowSpan != 0" [attr.rowSpan]="data[1].rowSpan">{{ data[1]['id'] }}</td>
+        <td *ngIf="data[1].rowSpan != 0" [attr.rowSpan]="data[1].rowSpan">{{ data[1]['id'] }}</td>
+        <td *ngIf="data[1].rowSpan != 0" [attr.rowSpan]="data[1].rowSpan">{{ data[1]['id'] }}</td>
+        <td *ngIf="data[2].rowSpan != 0" [attr.rowSpan]="data[2].rowSpan">{{ data[2]['id'] }}</td>
+      </tr>
+      <tr>
+        <td [attr.rowSpan]="2">合计</td>
+        <td>当量值</td>
+        <td>吨标准煤</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>等价值</td>
+        <td>吨标准煤</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+    <!--  <tr *ngFor="let item of sumList">
+      
+      <td [attr.colSpan]="5" *ngIf="item.colSpan != 0"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr> -->
+  </nz-table>
+</nz-card>

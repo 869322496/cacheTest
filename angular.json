@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/cachetest",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -30,7 +30,9 @@
             "styles": [
               "src/styles.less"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/ajv/dist/ajv.bundle.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -67,7 +69,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "cachetest:build"
+            "browserTarget": "cachetest:build",
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -95,7 +98,9 @@
             "styles": [
               "src/styles.less"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/ajv/dist/ajv.bundle.js"
+            ]
           }
         },
         "lint": {
@@ -124,6 +129,43 @@
           }
         }
       }
-    }},
-  "defaultProject": "cachetest"
+    }
+  },
+  "defaultProject": "cachetest",
+  "schematics": {
+    "ng-alain:module": {
+      "routing": true,
+      "spec": false
+    },
+    "ng-alain:list": {
+      "spec": false
+    },
+    "ng-alain:edit": {
+      "spec": false,
+      "modal": true
+    },
+    "ng-alain:view": {
+      "spec": false,
+      "modal": true
+    },
+    "ng-alain:curd": {
+      "spec": false
+    },
+    "@schematics/angular:module": {
+      "routing": true,
+      "spec": false
+    },
+    "@schematics/angular:component": {
+      "spec": false,
+      "flat": false,
+      "inlineStyle": true,
+      "inlineTemplate": false
+    },
+    "@schematics/angular:directive": {
+      "spec": false
+    },
+    "@schematics/angular:service": {
+      "spec": false
+    }
+  }
 }
